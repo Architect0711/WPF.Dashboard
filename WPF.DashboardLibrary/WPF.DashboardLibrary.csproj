@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{299941D6-5A65-4484-B711-80BFB059FCEF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WPF.DashboardLibrary</RootNamespace>
+    <AssemblyName>WPF.DashboardLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DTOs\Messages\MessageDTO.cs" />
+    <Compile Include="DTOs\Notification\NotificationDTO.cs" />
+    <Compile Include="DTOs\Settings\BooleanSettingDTO.cs" />
+    <Compile Include="DTOs\Settings\IntegerSettingDTO.cs" />
+    <Compile Include="DTOs\Settings\SettingChangeRequestDTO.cs" />
+    <Compile Include="DTOs\Settings\SettingChangeResponseDTO.cs" />
+    <Compile Include="DTOs\Settings\SettingDTO.cs" />
+    <Compile Include="DTOs\Status\StatusDTO.cs" />
+    <Compile Include="Enums\MessageType.cs" />
+    <Compile Include="Enums\NotificationType.cs" />
+    <Compile Include="Enums\UserControlLocation.cs" />
+    <Compile Include="IEvents\Backend\BackendRestartConfirmedEvent.cs" />
+    <Compile Include="IEvents\Backend\BackendRestartRequestedEvent.cs" />
+    <Compile Include="IEvents\Backend\BackendShutdownConfirmedEvent.cs" />
+    <Compile Include="IEvents\Backend\BackendShutdownRequestedEvent.cs" />
+    <Compile Include="IEvents\ChangePassword\ChangePasswordProcessedEvent.cs" />
+    <Compile Include="IEvents\ChangePassword\ChangePasswordRequestedEvent.cs" />
+    <Compile Include="IEvents\Dashboard\DashboardRestartConfirmedEvent.cs" />
+    <Compile Include="IEvents\Dashboard\DashboardRestartRequestedEvent.cs" />
+    <Compile Include="IEvents\Dashboard\DashboardShutdownConfirmedEvent.cs" />
+    <Compile Include="IEvents\Dashboard\DashboardShutdownRequestedEvent.cs" />
+    <Compile Include="IEvents\Login\LoginRequestEvent.cs" />
+    <Compile Include="IEvents\Login\LoginResponseEvent.cs" />
+    <Compile Include="IEvents\Login\LogoutEvent.cs" />
+    <Compile Include="IEvents\Messages\MessageEvent.cs" />
+    <Compile Include="IEvents\Notifications\NotificationHandledEvent.cs" />
+    <Compile Include="IEvents\Notifications\NotificationOccuredEvent.cs" />
+    <Compile Include="IEvents\Settings\SettingChangeRequestEvent.cs" />
+    <Compile Include="IEvents\Settings\SettingChangeResponseEvent.cs" />
+    <Compile Include="IEvents\Status\StatusChangedEvent.cs" />
+    <Compile Include="IEvents\Tests\TestRequestEvent.cs" />
+    <Compile Include="IEvents\Tests\TestResponseEvent.cs" />
+    <Compile Include="Interfaces\IDashboardStarterService.cs" />
+    <Compile Include="Interfaces\IDashboardStarterServiceCallback.cs" />
+    <Compile Include="Interfaces\IMenuItemService.cs" />
+    <Compile Include="Models\LaunchPrograms\LaunchProgramModel.cs" />
+    <Compile Include="Models\MenuItem\MenuItemModel.cs" />
+    <Compile Include="Models\Messages\MessageModel.cs" />
+    <Compile Include="Models\Notifications\NotificationModel.cs" />
+    <Compile Include="Models\Settings\BaseSetting.cs" />
+    <Compile Include="Models\Settings\BooleanSetting.cs" />
+    <Compile Include="Models\Settings\IntegerSetting.cs" />
+    <Compile Include="Models\Status\StatusModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestResponse\Settings\SettingChangeRequest.cs" />
+    <Compile Include="RequestResponse\Settings\SettingChangeResponse.cs" />
+    <Compile Include="RequestResponse\Tests\TestRequest.cs" />
+    <Compile Include="RequestResponse\Tests\TestResponse.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\EventAggregator\EventAggregator.csproj">
+      <Project>{2eb6cca8-0e9c-46ce-b039-7fe60b3ad10a}</Project>
+      <Name>EventAggregator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WPF.Basics\WPF.Basics.csproj">
+      <Project>{d5503e01-920a-4163-9fa9-e8009ee29e2f}</Project>
+      <Name>WPF.Basics</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

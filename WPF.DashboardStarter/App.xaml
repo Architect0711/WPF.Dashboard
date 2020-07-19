@@ -1,0 +1,39 @@
+﻿<Application x:Class="WPF.DashboardStarter.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WPF.DashboardStarter"
+             xmlns:dashboard="clr-namespace:WPF.DashboardStarter.Dashboard"
+             xmlns:skins="clr-namespace:WPF.DashboardStarter.Skinning"
+             xmlns:converters="clr-namespace:WPF.Basics.Converters;assembly=WPF.Basics"
+             xmlns:converters1="clr-namespace:WPF.DashboardStarter.Converters"
+             xmlns:configuration="clr-namespace:WPF.DashboardStarter.Configuration"
+             Startup="Application_Startup">
+            <!-- Startup="Application_Startup"-->
+             <!--StartupUri="Dashboard\Dashboard.xaml"-->
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <skins:SkinResourceDictionary DarkSource="Skinning/Dark/Colors.xaml" 
+                                              TealSource="Skinning/Teal/Colors.xaml" 
+                                              LightSource="Skinning/Light/Colors.xaml" />
+                
+                <ResourceDictionary Source="Styles/Dimensions.xaml"/>
+                <ResourceDictionary Source="Styles/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <converters1:DashboardContentToBaseUserControlConverter x:Key="DashboardContentConverter"/>
+            <converters1:DrawerContentToBaseUserControlConverter x:Key="DrawerContentConverter"/>
+            <converters1:PopupContentToBaseUserControlConverter x:Key="PopupContentConverter"/>
+            <converters1:MessageTypeToSolidColorBrushConverter x:Key="MessageTypeToSolidColorBrushConverter"/>
+            <configuration:DashboardViewModelLocator x:Key="ViewModelLocator"/>
+
+            <converters:SystemDrawingColorToSolidColorBrushConverter x:Key="SystemDrawingColorToSolidColorBrushConverter" />
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+            <converters:ConfigurableBooleanToVisibilityConverter 
+            x:Key="NegatedBooleanToVisibilityConverter"
+            True="Collapsed" 
+            False="Visible" />
+            <converters:NullImageConverter x:Key="NullImageConverter"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

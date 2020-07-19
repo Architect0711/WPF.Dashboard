@@ -1,0 +1,49 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WPF.DashboardStarter.Skinning.Teal">
+
+    <SolidColorBrush x:Key="PrimaryBackground" Color="DarkSlateGray"/>
+    <SolidColorBrush x:Key="PrimaryForeground" Color="White"/>
+    <SolidColorBrush x:Key="PrimaryBorder" Color="#243d3d"/>
+    <SolidColorBrush x:Key="PrimaryHighlight" Color="Turquoise"/>
+    <SolidColorBrush x:Key="PrimaryHighlightForeground" Color="White"/>
+
+    <SolidColorBrush x:Key="PrimaryTitlebarBackground" Color="DarkSlateGray"/>
+    <SolidColorBrush x:Key="PrimaryTitlebarForeground" Color="White"/>
+    <SolidColorBrush x:Key="PrimaryTitlebarBorder" Color="#243d3d"/>
+    <SolidColorBrush x:Key="PrimaryTitlebarHighlight" Color="Turquoise"/>
+    <SolidColorBrush x:Key="PrimaryTitlebarHighlightForeground" Color="White"/>
+
+    <SolidColorBrush x:Key="PrimaryButtonBackground" Color="DarkSlateGray"/>
+    <SolidColorBrush x:Key="PrimaryButtonForeground" Color="White"/>
+    <SolidColorBrush x:Key="PrimaryButtonBorder" Color="#243d3d"/>
+    <SolidColorBrush x:Key="PrimaryButtonHighlight" Color="Turquoise"/>
+    <SolidColorBrush x:Key="PrimaryButtonHighlightForeground" Color="White"/>
+
+    <SolidColorBrush x:Key="PrimaryWarning" Color="Gold"/>
+    <SolidColorBrush x:Key="PrimaryError" Color="Red"/>
+    <SolidColorBrush x:Key="PrimaryOk" Color="Green"/>
+
+    <SolidColorBrush x:Key="SecondaryBackground" Color="Teal"/>
+    <SolidColorBrush x:Key="SecondaryForeground" Color="White"/>
+    <SolidColorBrush x:Key="SecondaryBorder" Color="Turquoise"/>
+    <SolidColorBrush x:Key="SecondaryHighlight" Color="Aqua"/>
+    <SolidColorBrush x:Key="SecondaryHighlightForeground" Color="White"/>
+
+    <SolidColorBrush x:Key="SecondaryTitlebarBackground" Color="Teal"/>
+    <SolidColorBrush x:Key="SecondaryTitlebarForeground" Color="White"/>
+    <SolidColorBrush x:Key="SecondaryTitlebarBorder" Color="#243d3d"/>
+    <SolidColorBrush x:Key="SecondaryTitlebarHighlight" Color="Aqua"/>
+    <SolidColorBrush x:Key="SecondaryTitlebarHighlightForeground" Color="White"/>
+
+    <SolidColorBrush x:Key="SecondaryButtonBackground" Color="Teal"/>
+    <SolidColorBrush x:Key="SecondaryButtonForeground" Color="White"/>
+    <SolidColorBrush x:Key="SecondaryButtonBorder" Color="#243d3d"/>
+    <SolidColorBrush x:Key="SecondaryButtonHighlight" Color="Aqua"/>
+    <SolidColorBrush x:Key="SecondaryButtonHighlightForeground" Color="White"/>
+
+    <SolidColorBrush x:Key="SecondaryWarning" Color="Gold"/>
+    <SolidColorBrush x:Key="SecondaryError" Color="OrangeRed"/>
+    <SolidColorBrush x:Key="SecondaryOk" Color="Green"/>
+    
+</ResourceDictionary>

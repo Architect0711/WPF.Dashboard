@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WPF.DashboardLibrary.DTOs.Status" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WPF.DashboardLibrary.DTOs.Status" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8080/?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/System.Drawing" />
+  <xs:complexType name="ArrayOfStatusDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StatusDTO" nillable="true" type="tns:StatusDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStatusDTO" nillable="true" type="tns:ArrayOfStatusDTO" />
+  <xs:complexType name="StatusDTO">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Drawing" minOccurs="0" name="BackgroundColor" type="q1:Color" />
+      <xs:element minOccurs="0" name="HoverText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Order" type="xs:int" />
+      <xs:element minOccurs="0" name="StatusId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TitleText" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatusDTO" nillable="true" type="tns:StatusDTO" />
+</xs:schema>

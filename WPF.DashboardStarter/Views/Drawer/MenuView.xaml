@@ -1,0 +1,71 @@
+﻿<mvvm:BaseUserControl
+             xmlns:mvvm="clr-namespace:WPF.Basics.MVVM;assembly=WPF.Basics"
+             x:Class="WPF.DashboardStarter.Views.Drawer.MenuView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF.DashboardStarter.Views.Drawer"
+             DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=Menu}"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="400">
+    <Grid Background="{StaticResource PrimaryBackground}"
+        Style="{StaticResource SecondSidebarGrid}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Background="{StaticResource PrimaryHighlight}"
+              HorizontalAlignment="Stretch"
+                   Grid.Column="0" 
+                   Grid.Row="0" >
+            <TextBlock Name="TxtTitle"
+                   VerticalAlignment="Stretch" 
+                   HorizontalAlignment="Center" 
+                   Foreground="{StaticResource PrimaryHighlightForeground}"
+                   ClipToBounds="True"
+                   FontWeight="Bold"
+                   FontSize="18"
+                   Text="Menu"/>
+        </Grid>
+        <ListView x:Name="ListBox" 
+                 Grid.Column="0" 
+                 Grid.Row="1" 
+                  Style="{StaticResource DrawerListView}"
+                 ItemsSource="{Binding MenuItems}" 
+                 SelectedItem="{Binding SelectedMenuItem}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Background="{StaticResource PrimaryBackground}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="36"></RowDefinition>
+                            <RowDefinition Height="26"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock VerticalAlignment="Center" 
+                                   HorizontalAlignment="Left"
+                                   Foreground="{StaticResource PrimaryForeground}"
+                                   ClipToBounds="True"
+                                   Padding="5,0,0,0"
+                                   FontWeight="DemiBold"
+                                   FontSize="16"
+                                   Grid.Row="0" 
+                                   Text="{Binding Title}" />
+                        <TextBlock VerticalAlignment="Center" 
+                                   Foreground="{StaticResource PrimaryForeground}"
+                                   ClipToBounds="True"
+                                   Padding="5,0,0,0"
+                                   Grid.Column="0" 
+                                   Grid.Row="1" 
+                                   Grid.ColumnSpan="2"
+                                   Text="{Binding Description}" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</mvvm:BaseUserControl>

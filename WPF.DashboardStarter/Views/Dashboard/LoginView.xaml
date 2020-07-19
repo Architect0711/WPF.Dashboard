@@ -1,0 +1,183 @@
+﻿<mvvm:BaseUserControl xmlns:mvvm="clr-namespace:WPF.Basics.MVVM;assembly=WPF.Basics"
+                        x:Class="WPF.DashboardStarter.Views.Dashboard.LoginView"
+                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                        xmlns:loc="clr-namespace:WPF.DashboardStarter.Localization"
+                        xmlns:local="clr-namespace:WPF.DashboardStarter.Views.Dashboard"
+                        DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=Login}"
+                      xmlns:converters="clr-namespace:WPF.Basics.Converters;assembly=WPF.Basics"
+                      xmlns:usercontrols="clr-namespace:WPF.Basics.UserControls;assembly=WPF.Basics"
+                      mc:Ignorable="d" 
+                        d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="{StaticResource PrimaryBackground}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Name="TbTitle"
+                   Text="{Binding Path=Title, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                   Foreground="{StaticResource PrimaryForeground}"
+                   FontSize="24"
+                   VerticalAlignment="Center"
+                   Margin="20,0,0,0"
+                   Grid.Column ="0"
+                   Grid.Row ="0"
+                   Grid.ColumnSpan="7"/>
+
+        <TextBlock Name="TbUsername"
+                   Text="{x:Static loc:Strings.LoginView_Text_Username}"
+                   Foreground="{StaticResource PrimaryForeground}"
+                   FontSize="24"
+                   VerticalAlignment="Center"
+                   TextAlignment="Right"
+                   Grid.ColumnSpan="3"
+                   Grid.Column ="0"
+                   Grid.Row ="1"/>
+
+        <TextBlock Name="TbPassword"
+                   Text="{x:Static loc:Strings.LoginView_Text_Password}"
+                   Foreground="{StaticResource PrimaryForeground}"
+                   FontSize="24"
+                   VerticalAlignment="Center"
+                   TextAlignment="Right"
+                   Grid.ColumnSpan="3"
+                   Grid.Column ="0"
+                   Grid.Row ="3"/>
+
+        <TextBlock Name="TbNewPassword"
+                   Text="{x:Static loc:Strings.LoginView_Text_NewPassword}"
+                   Foreground="{StaticResource PrimaryForeground}"
+                   Visibility="{Binding Path=ChangePasswordMode, Converter={StaticResource BooleanToVisibilityConverter}}"
+                   FontSize="24"
+                   VerticalAlignment="Center"
+                   TextAlignment="Right"
+                   Grid.ColumnSpan="3"
+                   Grid.Column ="0"
+                   Grid.Row ="5"/>
+
+        <TextBlock Name="TbRepeatNewPassword"
+                   Text="{x:Static loc:Strings.LoginView_Text_RepeatNewPassword}"
+                   Foreground="{StaticResource PrimaryForeground}"
+                   Visibility="{Binding Path=ChangePasswordMode, Converter={StaticResource BooleanToVisibilityConverter}}"
+                   FontSize="24"
+                   VerticalAlignment="Center"
+                   TextAlignment="Right"
+                   Grid.ColumnSpan="3"
+                   Grid.Column ="0"
+                   Grid.Row ="7"/>
+
+        <TextBox Name="TxtUserName" 
+                 VerticalContentAlignment="Center"
+                 Text="{Binding Path=Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 FontSize="30"
+                 Margin="0,10,0,10"
+                 Grid.ColumnSpan="2"
+                 Grid.Column="4"
+                 Grid.Row ="1"/>
+
+        <usercontrols:BindablePasswordBox
+            Password="{Binding Path=Password, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"
+            x:Name="_PasswordBox"
+            Margin="0,10,0,10"
+            VerticalContentAlignment="Stretch"
+            FontSize="30"
+            Grid.ColumnSpan="2"
+            Grid.Column="4"
+            Grid.Row="3"/>
+
+        <TextBox Name="TxtNewPassword"
+                 Text="{Binding Path=NewPassword, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"
+                 Visibility="{Binding Path=ChangePasswordMode, Converter={StaticResource BooleanToVisibilityConverter}}"
+                 FontSize="30"
+                 Margin="0,10,0,10"
+                 Grid.ColumnSpan="2"
+                 Grid.Column="4"
+                 Grid.Row="5"/>
+
+        <TextBox Name="TxtRepeatNewPassword"
+                 Text="{Binding Path=RepeatNewPassword, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"
+                 Visibility="{Binding Path=ChangePasswordMode, Converter={StaticResource BooleanToVisibilityConverter}}"
+                 FontSize="30"
+                 Margin="0,10,0,10"
+                 Grid.ColumnSpan="2"
+                 Grid.Column="4"
+                 Grid.Row="7"/>
+
+        <Button Name="BtnLogin"
+                Command="{Binding RequestLoginCommand}"
+                FontSize="24"      
+                BorderBrush="Transparent"
+                Content="{x:Static loc:Strings.LoginView_Button_Login}"
+                Foreground="{StaticResource PrimaryForeground}"
+                Visibility="{Binding Path=ChangePasswordMode, Converter={StaticResource NegatedBooleanToVisibilityConverter}}"
+                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Background="Gray"
+                Grid.ColumnSpan="2"
+                Grid.Column="4"
+                Grid.Row="11"/>
+
+        <Button Name="BtnChange"
+                Command="{Binding RequestChangePasswordCommand}"
+                FontSize="24"
+                BorderBrush="Transparent"
+                Content="{x:Static loc:Strings.LoginView_Button_Change}"
+                Foreground="{StaticResource PrimaryForeground}"
+                Visibility="{Binding Path=ChangePasswordMode, Converter={StaticResource BooleanToVisibilityConverter}}"
+                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Background="Gray"
+                Grid.ColumnSpan="2"
+                Grid.Column="4"
+                Grid.Row="11"/>
+
+        <Button Name="BtnChangePassword"
+                BorderBrush="Transparent"
+                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                Command="{Binding ChangePasswordModeCommand}"
+                Foreground="{StaticResource PrimaryForeground}"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Content="{Binding ChangePasswordButtonText}"
+                Background="Gray"
+                FontSize="24"
+                Grid.ColumnSpan="2"
+                Grid.Column="1"
+                Grid.Row="11"/>
+
+        <TextBlock Text="{Binding Path=Hint, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                   Foreground="{StaticResource PrimaryError}"
+                   FontSize="30"
+                   FontWeight="DemiBold"
+                   Grid.ColumnSpan="5"
+                   Grid.Column="1"
+                   Grid.Row="9"/>
+
+    </Grid>
+</mvvm:BaseUserControl>

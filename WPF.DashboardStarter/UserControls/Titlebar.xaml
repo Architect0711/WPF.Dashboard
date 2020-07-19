@@ -1,0 +1,147 @@
+﻿<UserControl x:Name="MyTitleBar"
+             x:Class="WPF.DashboardStarter.UserControls.Titlebar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:loc="clr-namespace:WPF.DashboardStarter.Localization"
+             xmlns:local="clr-namespace:WPF.DashboardStarter.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="60" d:DesignWidth="800">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </UserControl.Resources>
+    <Grid Background="{StaticResource PrimaryTitlebarBackground}" 
+          Style="{StaticResource BaseHeight}">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Style="{StaticResource ColumnWidth}"></ColumnDefinition>
+            <ColumnDefinition Style="{StaticResource ColumnWidth}"></ColumnDefinition>
+            <ColumnDefinition Style="{StaticResource ColumnWidth}"></ColumnDefinition>
+            <ColumnDefinition Style="{StaticResource ColumnWidth}"></ColumnDefinition>
+            <ColumnDefinition Style="{StaticResource ColumnWidth}"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Button Name="CompanyButton" 
+                BorderBrush="Transparent"
+                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                VerticalAlignment="Stretch" 
+                HorizontalAlignment="Left"
+                Grid.Column="0"
+                Panel.ZIndex="0">
+            <Image Name="CompanyLogo" 
+               Source="{Binding Path=CompanyLogoPath_Small}" 
+               HorizontalAlignment="Left" 
+               Margin="2,2,2,2" 
+               Stretch="Uniform" 
+               VerticalAlignment="Bottom" 
+               Grid.Column="0">
+            </Image>
+        </Button>       
+        <TextBlock Name="AppTitle" 
+                       Text="{Binding Path=AppTitleText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   
+                       Grid.Column="1" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Center" 
+                       FontSize="22" 
+                       Foreground="{StaticResource PrimaryTitlebarForeground}">
+
+        </TextBlock>
+        <TextBlock Name="LoggedInUser" 
+                       Text="{Binding Path=LoggedInUserText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
+                       Visibility="{Binding Path=IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Grid.Column="2" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Center" 
+                       FontSize="22" 
+                       Foreground="{StaticResource PrimaryTitlebarForeground}">
+
+        </TextBlock>
+
+        <Button Name="LogoutButton" 
+                BorderBrush="Transparent"
+                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                VerticalAlignment="Stretch" 
+                HorizontalAlignment="Stretch"
+                Visibility="{Binding Path=IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}"
+                ToolTip="{x:Static loc:Strings.HoverText_Logout}"
+                Grid.Column="3"
+                Command="{Binding Path=RequestLogoutCommand}"
+                Panel.ZIndex="0">
+            <Image Name="LogoutIcon" 
+                    MaxHeight="25"
+                    MaxWidth="25"
+                    Source="{Binding ElementName=MyTitleBar, Path=LogoutIconPath}" 
+                    RenderTransformOrigin="0.5,0.5">
+            </Image>
+        </Button>
+
+        <Button Name="AboutButton" 
+                BorderBrush="Transparent"
+                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                ToolTip="{x:Static loc:Strings.HoverText_About}"
+                VerticalAlignment="Stretch" 
+                HorizontalAlignment="Stretch" 
+                Command="{Binding Path=RequestAboutCommand}"
+                Grid.Column="4"
+                Panel.ZIndex="0">
+            <Image Name="AboutIcon" 
+                    MaxHeight="25"
+                    MaxWidth="25"
+                    Source="{Binding ElementName=MyTitleBar, Path=AboutIconPath}" 
+                    RenderTransformOrigin="0.5,0.5">
+            </Image>
+        </Button>
+
+        <Button Name="MinimizeButton" 
+                BorderBrush="Transparent"
+                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                ToolTip="{x:Static loc:Strings.HoverText_Minimize}"
+                VerticalAlignment="Stretch" 
+                HorizontalAlignment="Stretch" 
+                Grid.Column="5"
+                Panel.ZIndex="0">
+            <Image Name="MinimizeIcon" 
+                    MaxHeight="30"
+                    MaxWidth="30"
+                    Source="{Binding ElementName=MyTitleBar, Path=MinimizeIconPath}" 
+                    RenderTransformOrigin="0.5,0.5">
+            </Image>
+        </Button>
+
+        <Button Name="MaximizeButton" 
+                BorderBrush="Transparent"
+                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                ToolTip="{ Binding  ElementName=MyTitleBar,Path=MaximizeIconTooltip }"
+                VerticalAlignment="Stretch" 
+                HorizontalAlignment="Stretch" 
+                Grid.Column="6"
+                Panel.ZIndex="0">
+            <Image Name="MaximizeIcon" 
+                    MaxHeight="30"
+                    MaxWidth="30"
+                    Source="{Binding ElementName=MyTitleBar, Path=MaximizeIconPath}" 
+                    RenderTransformOrigin="0.5,0.5">
+            </Image>
+        </Button>
+
+        <Button Name="CloseButton" 
+                BorderBrush="Transparent"
+                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                ToolTip="{x:Static loc:Strings.HoverText_Close}"
+                VerticalAlignment="Stretch" 
+                HorizontalAlignment="Stretch" 
+                Grid.Column="7"
+                Panel.ZIndex="0">
+            <Image Name="ExitIcon" 
+                    MaxHeight="30"
+                    MaxWidth="30"
+                    Source="{Binding ElementName=MyTitleBar, Path=ExitIconPath}" 
+                    RenderTransformOrigin="0.5,0.5">
+            </Image>
+        </Button>
+    </Grid>
+</UserControl>

@@ -1,0 +1,166 @@
+﻿<mvvm:BaseUserControl xmlns:mvvm="clr-namespace:WPF.Basics.MVVM;assembly=WPF.Basics"
+                        x:Class="WPF.DashboardStarter.Views.Popup.AboutWindowView"
+                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                        DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=About}"
+                        xmlns:local="clr-namespace:WPF.DashboardStarter.Views.Popup"
+                        mc:Ignorable="d" 
+                        d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid  Background="{StaticResource SecondaryBackground}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Name="TxtAppTitle" 
+                   Text="{Binding AppTitle}"
+                   Foreground="{StaticResource SecondaryForeground}"
+                   Margin="20,20,20,20"
+                   FontSize="20"
+                   Grid.Column="1"
+                   Grid.Row="0"/>
+
+        <TextBlock Name="TxtVersion" 
+                   Text="{Binding Version}"
+                   Foreground="{StaticResource SecondaryForeground}"
+                   Margin="20,5,20,5"
+                   FontSize="16"
+                   Grid.Column="1"
+                   Grid.Row="1"/>
+
+        <TextBlock Name="TxtCopyrightText" 
+                   Text="{Binding CopyrightText}"
+                   Foreground="{StaticResource SecondaryForeground}"
+                   Margin="20,10,20,0"
+                   FontSize="16"
+                   Grid.Column="1"
+                   Grid.Row="2"/>
+
+        <TextBlock Name="TxtCopyrightLink" 
+                   Foreground="{StaticResource SecondaryForeground}"
+                   Margin="20,0,20,0"
+                   FontSize="16"
+                   Grid.Column="1"
+                   Grid.Row="3">
+            <Hyperlink NavigateUri="{Binding CopyrightLink}" RequestNavigate="Hyperlink_RequestNavigate">
+                <TextBlock Text="{Binding CopyrightLink}"/>
+            </Hyperlink>
+        </TextBlock>
+
+        <TextBlock Name="TxtCreditsForIconsText" 
+                   Text="{Binding CreditsForIconsText}"
+                   Foreground="{StaticResource SecondaryForeground}"
+                   Margin="20,10,20,0"
+                   FontSize="16"
+                   Grid.Column="1"
+                   Grid.Row="4"/>
+
+        <TextBlock Margin="20,0,20,0"
+                   Foreground="{StaticResource SecondaryForeground}"
+                   FontSize="16"
+                   Grid.Column="1"
+                   Grid.Row="5"
+                   Name="TxtCreditsForIconsLink" >
+            <Hyperlink NavigateUri="{Binding CreditsForIconsLink}" RequestNavigate="Hyperlink_RequestNavigate">
+                <TextBlock Text="{Binding CreditsForIconsLink}"/>
+            </Hyperlink>
+        </TextBlock>
+
+        <TextBlock Name="TxtDeveloperText" 
+                   Foreground="{StaticResource SecondaryForeground}"
+                   Text="{Binding DeveloperText}"
+                   Margin="20,10,20,0"
+                   FontSize="16"
+                   Grid.Column="1"
+                   Grid.Row="6"/>
+
+        <!--<TextBlock Name="TxtDeveloperLink" 
+                   Text="{Binding DeveloperLink}"
+                   Foreground="{StaticResource SecondaryForeground}"
+                   Margin="20,0,20,0"
+                   FontSize="16"
+                   Grid.Column="1"
+                   Grid.Row="7"/>-->
+
+        <TextBlock Name="TxtGithubText" 
+                   Text="{Binding GithubText}"
+                   Foreground="{StaticResource SecondaryForeground}"
+                   Margin="20,10,20,0"
+                   FontSize="16"
+                   Grid.Column="1"
+                   Grid.Row="8"/>
+
+        <TextBlock Name="TxtGithubLink" 
+                   Foreground="{StaticResource SecondaryForeground}"
+                   Margin="20,0,0,20"
+                   FontSize="16"
+                   Grid.Column="1"
+                   Grid.Row="9">
+            <Hyperlink NavigateUri="{Binding GithubLink}" RequestNavigate="Hyperlink_RequestNavigate">
+                <TextBlock Text="{Binding GithubLink}"/>
+            </Hyperlink>
+        </TextBlock>
+
+        <TextBlock Name="TxtLog4NetText" 
+                   Text="{Binding Log4NetText}"
+                   Foreground="{StaticResource SecondaryForeground}"
+                   Margin="20,0,20,0"
+                   FontSize="16"
+                   Grid.Column="1"
+                   Grid.Row="10"/>
+
+        <TextBlock Name="TxtLog4NetLink" 
+                   Foreground="{StaticResource SecondaryForeground}"
+                   Margin="20,0,20,20"
+                   FontSize="16"
+                   Grid.Column="1"
+                   Grid.Row="11">
+            <Hyperlink NavigateUri="{Binding Log4NetLink}" RequestNavigate="Hyperlink_RequestNavigate">
+                <TextBlock Text="{Binding Log4NetLink}"/>
+            </Hyperlink>
+        </TextBlock>
+
+
+        <TextBlock Name="TxtUnityText" 
+                   Text="{Binding UnityText}"
+                   Foreground="{StaticResource SecondaryForeground}"
+                   Margin="20,0,20,0"
+                   FontSize="16"
+                   Grid.Column="1"
+                   Grid.Row="12"/>
+
+        <TextBlock Name="TxtUnityLink" 
+                   Foreground="{StaticResource SecondaryForeground}"
+                   Margin="20,0,20,20"
+                   FontSize="16"
+                   Grid.Column="1"
+                   Grid.Row="13">
+            <Hyperlink NavigateUri="{Binding UnityLink}" RequestNavigate="Hyperlink_RequestNavigate">
+                <TextBlock Text="{Binding UnityLink}"/>
+            </Hyperlink>
+        </TextBlock>
+
+    </Grid>
+</mvvm:BaseUserControl>

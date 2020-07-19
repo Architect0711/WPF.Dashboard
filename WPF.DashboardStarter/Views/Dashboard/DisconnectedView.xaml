@@ -1,0 +1,60 @@
+﻿<mvvm:BaseUserControl
+             xmlns:mvvm="clr-namespace:WPF.Basics.MVVM;assembly=WPF.Basics"
+             x:Class="WPF.DashboardStarter.Views.Dashboard.DisconnectedView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF.DashboardStarter.Views.Dashboard"
+             xmlns:baseusercontrols="clr-namespace:WPF.Basics.UserControls;assembly=WPF.Basics"
+             DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=Disconnected}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="{StaticResource PrimaryBackground}">
+        <Grid.RowDefinitions>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+            </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid
+            Name="GridCompanyLogo"
+            Grid.Row="0" 
+            Grid.Column="0"
+            Grid.ColumnSpan="3">
+            <Image Stretch="None" Source="{Binding Path=CompanyLogoPath_Large}">
+                
+            </Image>
+        </Grid>
+
+        <baseusercontrols:DoubleSpinnerCircle 
+            Grid.Row="1" 
+            Grid.Column="1"
+            OuterArcColor="{StaticResource SecondaryHighlight}"
+            InnerArcColor="{StaticResource SecondaryHighlight}"
+            OuterRingColor="{StaticResource SecondaryBackground}"
+            InnerRingColor="{StaticResource SecondaryBackground}"
+            RimColor="{StaticResource PrimaryBackground}"
+            CenterCircleColor="{StaticResource PrimaryBackground}"
+            >
+
+        </baseusercontrols:DoubleSpinnerCircle>
+
+        <TextBlock Name="TextBlockDisconnected"
+                   Grid.Row="2" 
+                   Text="{Binding Path=ConnectingText}"
+                   Foreground="{StaticResource PrimaryForeground}"
+                   Grid.Column="1"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" 
+                   FontSize="45">
+        </TextBlock>
+
+        
+    </Grid>
+</mvvm:BaseUserControl>

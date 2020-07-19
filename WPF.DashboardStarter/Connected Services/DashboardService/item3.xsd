@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WPF.DashboardLibrary.DTOs.Settings" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WPF.DashboardLibrary.DTOs.Settings" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8080/?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfSettingDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SettingDTO" nillable="true" type="tns:SettingDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSettingDTO" nillable="true" type="tns:ArrayOfSettingDTO" />
+  <xs:complexType name="SettingDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeRequiresBackendRestart" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ChangeRequiresDashboardRestart" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HoverText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LongText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Order" type="xs:int" />
+      <xs:element minOccurs="0" name="SettingId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShortText" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SettingDTO" nillable="true" type="tns:SettingDTO" />
+  <xs:complexType name="IntegerSettingDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SettingDTO">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PossibleValues" nillable="true" type="q1:ArrayOfint" />
+          <xs:element minOccurs="0" name="Value" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IntegerSettingDTO" nillable="true" type="tns:IntegerSettingDTO" />
+  <xs:complexType name="BooleanSettingDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SettingDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BooleanSettingDTO" nillable="true" type="tns:BooleanSettingDTO" />
+  <xs:complexType name="SettingChangeRequestDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SettingToChange" nillable="true" type="tns:SettingDTO" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SettingChangeRequestDTO" nillable="true" type="tns:SettingChangeRequestDTO" />
+  <xs:complexType name="SettingChangeResponseDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Info" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Setting" nillable="true" type="tns:SettingDTO" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WasChanged" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SettingChangeResponseDTO" nillable="true" type="tns:SettingChangeResponseDTO" />
+</xs:schema>

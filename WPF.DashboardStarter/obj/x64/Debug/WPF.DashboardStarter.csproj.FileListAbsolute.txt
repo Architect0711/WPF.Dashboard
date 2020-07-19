@@ -1,0 +1,15 @@
+E:\Develop\VisualStudio\10_Work\WPF.DashboardStarter\obj\x64\Debug\WPF.DashboardStarter.csprojAssemblyReference.cache
+E:\Develop\VisualStudio\10_Work\WPF.DashboardStarter\obj\x64\Debug\Dashboard\Dashboard.g.cs
+E:\Develop\VisualStudio\10_Work\WPF.DashboardStarter\obj\x64\Debug\UserControls\Titlebar.g.cs
+E:\Develop\VisualStudio\10_Work\WPF.DashboardStarter\obj\x64\Debug\Views\Dashboard\LoginView.g.cs
+E:\Develop\VisualStudio\10_Work\WPF.DashboardStarter\obj\x64\Debug\Views\Dashboard\MainView.g.cs
+E:\Develop\VisualStudio\10_Work\WPF.DashboardStarter\obj\x64\Debug\Views\Drawer\LaunchProgramsView.g.cs
+E:\Develop\VisualStudio\10_Work\WPF.DashboardStarter\obj\x64\Debug\Views\Drawer\SettingsView.g.cs
+E:\Develop\VisualStudio\10_Work\WPF.DashboardStarter\obj\x64\Debug\Views\Drawer\StatusView.g.cs
+E:\Develop\VisualStudio\10_Work\WPF.DashboardStarter\obj\x64\Debug\Views\Drawer\TestView.g.cs
+E:\Develop\VisualStudio\10_Work\WPF.DashboardStarter\obj\x64\Debug\Views\Popup\AboutWindowView.g.cs
+E:\Develop\VisualStudio\10_Work\WPF.DashboardStarter\obj\x64\Debug\Views\Popup\NotificationWindowView.g.cs
+E:\Develop\VisualStudio\10_Work\WPF.DashboardStarter\obj\x64\Debug\App.g.cs
+E:\Develop\VisualStudio\10_Work\WPF.DashboardStarter\obj\x64\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Develop\VisualStudio\10_Work\WPF.DashboardStarter\obj\x64\Debug\WPF.DashboardStarter_MarkupCompile.cache
+E:\Develop\VisualStudio\10_Work\WPF.DashboardStarter\obj\x64\Debug\WPF.DashboardStarter_MarkupCompile.lref

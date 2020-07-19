@@ -1,0 +1,17 @@
+E:\Develop\VisualStudio\10_Work\WPF.Dashboard\WPF.DashboardLibrary\bin\Debug\WPF.DashboardLibrary.dll
+E:\Develop\VisualStudio\10_Work\WPF.Dashboard\WPF.DashboardLibrary\bin\Debug\WPF.DashboardLibrary.pdb
+E:\Develop\VisualStudio\10_Work\WPF.Dashboard\WPF.DashboardLibrary\bin\Debug\EventAggregator.dll
+E:\Develop\VisualStudio\10_Work\WPF.Dashboard\WPF.DashboardLibrary\bin\Debug\WPF.Basics.dll
+E:\Develop\VisualStudio\10_Work\WPF.Dashboard\WPF.DashboardLibrary\bin\Debug\Microsoft.Expression.Drawing.dll
+E:\Develop\VisualStudio\10_Work\WPF.Dashboard\WPF.DashboardLibrary\bin\Debug\log4net.dll
+E:\Develop\VisualStudio\10_Work\WPF.Dashboard\WPF.DashboardLibrary\bin\Debug\Unity.Container.dll
+E:\Develop\VisualStudio\10_Work\WPF.Dashboard\WPF.DashboardLibrary\bin\Debug\Unity.Abstractions.dll
+E:\Develop\VisualStudio\10_Work\WPF.Dashboard\WPF.DashboardLibrary\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\Develop\VisualStudio\10_Work\WPF.Dashboard\WPF.DashboardLibrary\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\Develop\VisualStudio\10_Work\WPF.Dashboard\WPF.DashboardLibrary\bin\Debug\EventAggregator.pdb
+E:\Develop\VisualStudio\10_Work\WPF.Dashboard\WPF.DashboardLibrary\bin\Debug\WPF.Basics.pdb
+E:\Develop\VisualStudio\10_Work\WPF.Dashboard\WPF.DashboardLibrary\obj\Debug\WPF.DashboardLibrary.csprojAssemblyReference.cache
+E:\Develop\VisualStudio\10_Work\WPF.Dashboard\WPF.DashboardLibrary\obj\Debug\WPF.DashboardLibrary.csproj.CopyComplete
+E:\Develop\VisualStudio\10_Work\WPF.Dashboard\WPF.DashboardLibrary\obj\Debug\WPF.DashboardLibrary.dll
+E:\Develop\VisualStudio\10_Work\WPF.Dashboard\WPF.DashboardLibrary\obj\Debug\WPF.DashboardLibrary.pdb
+E:\Develop\VisualStudio\10_Work\WPF.Dashboard\WPF.DashboardLibrary\obj\Debug\WPF.DashboardLibrary.csproj.CoreCompileInputs.cache
