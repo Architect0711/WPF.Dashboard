@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCF.DashboardService", "WCF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF.Basics", "..\WPF.Basics\WPF.Basics.csproj", "{D5503E01-920A-4163-9FA9-E8009EE29E2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventAggregator", "..\EventAggregator\EventAggregator.csproj", "{2EB6CCA8-0E9C-46CE-B039-7FE60B3AD10A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventAggregator", "..\EventAggregator\EventAggregator\EventAggregator.csproj", "{2EB6CCA8-0E9C-46CE-B039-7FE60B3AD10A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF.DashboardImpl", "WPF.DashboardImpl\WPF.DashboardImpl.csproj", "{1275F858-242E-4EC7-B794-12E30F4B2005}"
 EndProject
