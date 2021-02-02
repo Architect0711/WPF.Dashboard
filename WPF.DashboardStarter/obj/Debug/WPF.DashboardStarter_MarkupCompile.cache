@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\Develop\VisualStudio\10_Work\WPF.Dashboard\WPF.DashboardStarter\obj\Debug\
+C:\Users\Robert\Desktop\New folder\WPF.Dashboard\WPF.DashboardStarter\obj\Debug\
 WPF.DashboardStarter
 none
 false
 DEBUG;TRACE
-E:\Develop\VisualStudio\10_Work\WPF.Dashboard\WPF.DashboardStarter\App.xaml
+C:\Users\Robert\Desktop\New folder\WPF.Dashboard\WPF.DashboardStarter\App.xaml
 17-386108111
 6-622178167
-48-1382081002
-8364644614
+491392046879
+82-986355291
 Dashboard\Dashboard.xaml;Skinning\Dark\Colors.xaml;Skinning\Light\Colors.xaml;Skinning\Teal\Colors.xaml;Styles\Dimensions.xaml;Styles\Styles.xaml;UserControls\Titlebar.xaml;Views\Dashboard\DisconnectedView.xaml;Views\Dashboard\LoginView.xaml;Views\Dashboard\SkinningView.xaml;Views\Drawer\LaunchProgramsView.xaml;Views\Drawer\MenuView.xaml;Views\Drawer\MessagesView.xaml;Views\Drawer\SettingsView.xaml;Views\Drawer\StatusView.xaml;Views\Popup\AboutWindowView.xaml;Views\Popup\NotificationWindowView.xaml;
 
-False
+True
 
